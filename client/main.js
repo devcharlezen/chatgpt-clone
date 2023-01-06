@@ -2,7 +2,9 @@ import bot from './assets/bot.svg'
 import user from './assets/user.svg'
 
 const form = document.querySelector('form')
+const input = document.querySelector('textarea')
 const chatContainer = document.querySelector('#chat_container')
+const addnew = document.querySelector('#addnew')
 let loadInterval
 
 const loader = (e) => {
@@ -57,9 +59,8 @@ const chatStripe = (isAI, value, uniqueId) => {
 
 const handleSubmit = async (e) => {
   e.preventDefault()
-
+  if(!input.value) return
   const data = new FormData(form)
-
   //  User's chatstripe
   chatContainer.innerHTML += chatStripe(false, data.get('prompt'))
   form.reset()
@@ -92,7 +93,6 @@ const handleSubmit = async (e) => {
     const data = await response.json()
     const parsedData = data.bot.trim()
 
-
     typeText(messageDiv, parsedData)
   } else {
     const err = await response.text()
@@ -101,9 +101,17 @@ const handleSubmit = async (e) => {
   }
 }
 
+function newChat() {
+  chatContainer.innerHTML = ''
+}
+
+addnew.addEventListener('click', newChat)
 form.addEventListener('submit', handleSubmit)
 form.addEventListener('keyup', (e) => {
   if (e.keyCode === 13) {
     handleSubmit(e)
   }
 })
+
+
+

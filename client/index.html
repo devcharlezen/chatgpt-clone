@@ -5,15 +5,31 @@
     <link rel="icon" type="image/svg+xml" href="favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Devcharlezen | Chat GPT AI</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div id="app">
-      <div id="chat_container"></div>
-      <form>
-        <textarea name="prompt" cols="1" rows="1" placeholder="Start asking..."></textarea>
-        <button type="submit"><img src="assets/send.svg" alt=""></button>
-      </form>
+      <div class="chatBox">
+        <div id="chat_container"></div>
+        <div class="sidemenu">
+          <div class="side-menu-button" id="addnew" onclick="newChat()">
+            <span>+</span>
+            Clear Chat
+          </div>
+        </div>
+        <form>
+          <div class="profile">
+            <img src="./assets/user.svg" alt="user" />
+          </div>
+          <textarea
+            class="chat-input-text-area"
+            name="prompt"
+            cols="1"
+            rows="1"
+          ></textarea>
+          <button type="submit"><img src="assets/send.svg" alt="" /></button>
+        </form>
+      </div>
     </div>
     <script type="module" src="./main.js"></script>
   </body>

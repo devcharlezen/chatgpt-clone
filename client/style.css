@@ -16,6 +16,41 @@ body {
   height: 100vh;
   background: #343541;
 
+  /* display: flex; */
+
+}
+
+
+.sidemenu {
+  width: 260px;
+  padding: 10px;
+}
+
+.side-menu-button {
+  padding: 12px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  text-align: left;
+  transition: ease 0.25s all;
+  cursor: pointer;
+  font-weight: 600;
+  color: #fff;
+}
+
+.side-menu-button span {
+  padding-left: 6px;
+  padding-right: 12px;
+}
+
+.side-menu-button:hover {
+  background-color: rgb(255, 255, 255, 0.1);
+}
+
+.chatBox{
+  width: 100vw;
+  height: 100vh;
+  background: #343541;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -117,23 +152,28 @@ form {
   max-width: 1280px;
   margin: 0 auto;
   padding: 10px;
-  background: #40414F;
   display: flex;
   flex-direction: row;
   gap: 10px;
 }
 
-textarea {
-  width: 100%;
-
-  color: #fff;
-  font-size: 18px;
-
-  padding: 10px;
-  background: transparent;
+.chat-input-text-area {
+  background-color: #40414f;
+  width: 90%;
   border-radius: 5px;
   border: none;
+  border-color: none;
   outline: none;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0.25);
+  padding: 12px;
+  color: #fff;
+  font-size: 1.25em;
+  margin-top: -5px;
+}
+
+.chat-input-text-area:focus {
+  border: none;
+  outline: 0;
 }
 
 button {
@@ -147,3 +187,14 @@ form img {
   width: 30px;
   height: 30px;
 }
+
+
+/* @media only screen and (max-width: 600px) {
+  #app {
+    display: block;
+  }
+
+  .sidemenu{
+    width: 100%;
+  }
+} */
